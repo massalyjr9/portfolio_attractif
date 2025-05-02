@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idrissa Massaly - Développeur Full Stack</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css">
+  <style>
+    :root {
+      --bg-color: #f8f9fa;
+      --text-color: #333;
+      --card-bg: white;
+      --header-bg: linear-gradient(135deg, #1f2937, #4b5563);
+      --nav-bg: #1f0d2b;
+      --nav-hover: #1d4165;
+      --accent: #38bdf8;
+    }
+    [data-theme="dark"] {
+      --bg-color: #0a0a0a;
+      --text-color: #e0d9f4;
+      --card-bg: #1a1a1a;
+      --header-bg: linear-gradient(135deg, #2d0057, #6b21a8);
+      --nav-bg: #1a1a1a;
+      --nav-hover: #32064f;
+      --accent: #a78bfa;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.5s, color 0.5s;
+    }
+    header {
+      background: var(--header-bg);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      transition: background 0.5s;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      animation: fadeIn 1s ease;
+    }
+    header p {
+      font-size: 1.2em;
+      animation: fadeIn 2s ease;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: var(--nav-bg);
+      transition: background-color 0.5s;
+    }
+    #a-propos .card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+#a-propos h2 {
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+#a-propos p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+    nav a {
+      color: white;
+      padding: 15px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: var(--nav-hover);
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeInUp 1s ease;
+    }
+    h2 {
+      color: #1f2937;
+      margin-bottom: 20px;
+    }
+    .projects, .experience, .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, background-color 0.5s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    footer {
+      background-color: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .contact {
+      text-align: center;
+    }
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: auto;
+    }
+    input, textarea {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: var(--card-bg);
+      color: var(--text-color);
+    }
+    button {
+      background-color: var(--accent);
+      border: none;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #1f2937;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .skills .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .skill-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      font-size: 2em;
+    }
+    .skill-icons i {
+      transition: transform 0.3s ease;
+    }
+    .skill-icons i:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></div>
+  <header>
+    <h1>Idrissa Massaly</h1>
+    <p>Développeur Full Stack Web & Mobile | Laravel, React, Python, Flutter</p>
+    <p>
+      <a href="https://github.com/massalyjr9" style="color: var(--accent)">GitHub</a> |
+      <a href="https://www.linkedin.com/in/idrissa-massaly-154b8022b/" style="color: var(--accent)">LinkedIn</a>
+    </p>
+  </header>
+
+  <nav>
+    <a href="#a-propos">À propos</a>
+    <a href="#projets">Projets</a>
+    <a href="#experience">Expériences</a>
+    <a href="#competences">Compétences</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <section id="a-propos">
+    <h2>À propos</h2>
+    <div class="card">
+      <p>
+        Bonjour ! Je suis Idrissa Massaly, développeur Full Stack Web et Mobile. Passionné par les technologies de développement web et mobile, j'ai une expertise solide en PHP, Python, JavaScript, ainsi qu'en technologies comme Laravel, React et Flutter.
+      </p>
+      <p>
+        J'aime relever des défis techniques, travailler sur des projets d'impact réel et améliorer constamment mes compétences en développement. Mon expérience inclut des projets de gestion des parrainages électoraux, des moteurs d'analyse sur des données capteurs, ainsi que des simulations distribuées avec des algorithmes de reconfiguration. 
+      </p>
+      <p>
+        En dehors du travail, je suis passionné par le développement personnel, l'innovation technologique, et je cherche toujours à créer des solutions qui facilitent la vie des utilisateurs.
+      </p>
+    </div>
+  </section>
+  
+  <section id="projets">
+    <h2>Projets</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Application de parrainage électoral</h3>
+        <p>Développement d’une application web de gestion numérique des parrainages électoraux dans le cadre de l’élection présidentielle.</p>
+        <p>Authentification des électeurs par vérification croisée (CIN, carte d’électeur, bureau de vote),
+            suivi d’un enregistrement unique du parrainage.</p>
+        <p>Création d’un tableau de bord de suivi des parrainages électoraux.</p>
+        <p><strong>Stack :</strong> Laravel, PHP, SQL</p>
+      </div>
+      <div class="card">
+        <h3>Détection de données fausses (Deep Learning)</h3>
+        <p>Conception d'un moteur d'analyse sur données capteurs (temps réel, bruit, pollution)</p>
+        <p>Prétraitement, normalisation MinMaxScaler, Word2Vec, LSTM</p>
+        <p><strong>Stack :</strong> Python, TensorFlow, Scikit-learn</p>
+      </div>
+      <div class="card">
+        <h3>VisibleSim - Simulation distribuée</h3>
+        <p>Simulation de modules autonomes avec algorithmes de reconfiguration</p>
+        <p><strong>Stack :</strong> C++, Java, Docker</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Expériences professionnelles</h2>
+    <div class="experience">
+      <div class="card">
+        <h3>Data Engineer – ANSD</h3>
+        <p>Automatisation traitement ENES 2024, visualisation Power BI, prédiction emploi</p>
+      </div>
+      <div class="card">
+        <h3>Dév Web – Mu-Car & E-Takhawal</h3>
+        <p>App de transport multimodal, dashboards Power BI, publication ROADEF</p>
+      </div>
+      <div class="card">
+        <h3>Dév mobile – ESP</h3>
+        <p>App livraison avec Flutter, géoloc, multi-profils</p>
+      </div>
+    </div>
+  </section>
+  <section id="competences">
+    <h2>Compétences</h2>
+    <div class="skills">
+      <div class="card">
+        <h3>Frontend</h3>
+        <div class="skill-icons">
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js-square"></i>
+            <i class="fab fa-react"></i>
+            <i class="fab fa-flutter"></i>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Backend</h3>
+        <div class="skill-icons">
+            <i class="fab fa-python"></i>
+            <i class="fab fa-php"></i>
+            <i class="fab fa-laravel"></i>
+            <i class="fab fa-java"></i>
+            <i class="fab fa-node-js"></i>
+            
+        </div>
+      </div>
+      <div class="card">
+        <h3>Data / DevOps</h3>
+        <div class="skill-icons">
+            <i class="fab fa-docker"></i>
+            <i class="fab fa-aws"></i>
+            <i class="fab fa-git"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <form action="https://formspree.io/f/mnqevgpr" method="POST">
+        <input type="text" name="name" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre email" required>
+        <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+      <p>Email : <a href="mailto:idrissamassaly09@gmail.com">idrissamassaly09@gmail.com</a></p>
+      <p>📍 Montbéliard, France</p>
+      <p><a href="/CV_Idrissa_Massaly_Dev-3.pdf" download>Télécharger mon CV</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Idrissa Massaly</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute("data-theme");
+      html.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+    }
+  </script>
+</body>
+</html>
